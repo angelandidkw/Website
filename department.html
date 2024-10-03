@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments - Georgia State Roleplay</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.0/dist/full.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/firebase@8.6.8/firebase-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/firebase@8.6.8/firebase-auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; 
+            background: linear-gradient(135deg, rgba(39, 40, 56, 0.8), rgba(39, 40, 56, 0.8)), url('./image (19).png') no-repeat center center fixed; 
+            background-size: cover; 
+            animation: pulse 10s infinite alternate; 
+        }
+        @keyframes pulse {
+            0% { background-color: rgba(39, 40, 56, 0.8); }
+            100% { background-color: rgba(39, 40, 56, 0.8); }
+        }
+        .header, .footer-bg {
+            backdrop-filter: blur(7px);
+        }
+        .footer-bg {
+            background: linear-gradient(to bottom, rgba(10, 20, 80, 0.9), rgba(10, 14, 65, 1));
+        }
+        .container {
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 5rem 1rem; 
+        }
+        .department-image {
+            width: 60px; 
+            height: 60px;
+        }
+        .department-card {
+            background: rgba(255, 255, 255, 0.1); 
+            border-radius: 10px; 
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .department-card:hover {
+            transform: scale(1.05); 
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header class="header fixed top-0 left-0 w-full z-10 p-5">
+        <nav class="flex justify-between items-center max-w-6xl mx-auto">
+            <div class="flex items-center space-x-3 text-white">
+                <img src="https://cdn.discordapp.com/icons/1145425767283556532/b947aca545a7b23d0079c20b1fd01c29.png?size=512" alt="Logo" class="w-20 h-20">
+                <div class="text-2xl font-extrabold">Georgia State Roleplay</div>
+            </div>
+            <div class="space-x-5">
+                <a href="georgia.html" class="text-white hover:text-blue-400 transition duration-300 ease-in-out">Home</a>
+                <a href="infomation.html" class="text-white hover:text-blue-400 transition duration-300 ease-in-out">Infomation</a>
+                <a href="department.html" class="text-white hover:text-blue-400 transition duration-300 ease-in-out">Application</a>
+                <a href="links.html" class="text-white hover:text-blue-400 transition duration-300 ease-in-out">Links</a>
+
+            </div>
+        </nav>
+    </header>
+
+    <section class="container text-white text-center mt-20">
+        <h1 class="text-5xl font-extrabold mb-6">Georgia State Departments</h1>
+        <p class="text-lg mb-10">Explore the diverse departments at Georgia State Roleplay, each dedicated to creating an engaging roleplaying experience.</p>
+        
+        <div class="department-card p-6 mb-10 rounded-lg" data-sr-id="1">
+            <img src="46a8261dff9d08a2cb5e5de0cbd0d900.png" alt="APD Logo" class="department-image mx-auto mb-4">
+            <h2 class="text-3xl font-semibold">Atlanta Police Department (APD)</h2>
+            <p>The APD is committed to enhancing community safety and engagement. Through dedicated divisions, they aim to support Atlanta's citizens effectively.</p>
+            <p><strong>Chief of Police:</strong> Alfredovince</p>
+            <p><strong>Assistant Chief:</strong> Unknown</p>
+            <p><strong>Application Status:</strong> Not open</p>
+            <div class="mt-5 space-x-4">
+                <a href="https://discord.gg/vEfBU5A6YJ" class="bg-blue-600 text-white px-5 py-3 rounded hover:bg-blue-700 transition duration-300">Discord Invite</a>
+                <a href="https://application-link.com" class="bg-green-600 text-white px-5 py-3 rounded hover:bg-green-700 transition duration-300">Application Link</a>
+            </div>
+        </div>
+
+        <div class="department-card p-6 mb-10 rounded-lg" data-sr-id="2">
+            <img src="4f0032be8c9d5a726aa2856f7812a887 (4).png" alt="GSP Logo" class="department-image mx-auto mb-4">
+            <h2 class="text-3xl font-semibold">Georgia State Patrol (GSP)</h2>
+            <p>The GSP focuses on public safety through rigorous training and unwavering professionalism, ensuring justice and integrity in all operations.</p>
+            <p><strong>Colonel:</strong> M1911A1_Colt</p>
+            <p><strong>Lieutenant Colonel:</strong> 9RexW</p>
+            <p><strong>Application Status:</strong> Open</p>
+            <div class="mt-5 space-x-4">
+                <a href="https://discord.gg/vEfBU5A6YJ" class="bg-blue-600 text-white px-5 py-3 rounded hover:bg-blue-700 transition duration-300">Discord Invite</a>
+                <a href="https://application-link.com" class="bg-green-600 text-white px-5 py-3 rounded hover:bg-green-700 transition duration-300">Application Link</a>
+            </div>
+        </div>
+
+        <div class="department-card p-6 mb-10 rounded-lg" data-sr-id="3">
+            <img src="https://via.placeholder.com/100" alt="FCSO Logo" class="department-image mx-auto mb-4">
+            <h2 class="text-3xl font-semibold">Fulton County Sheriff's Office (FCSO)</h2>
+            <p>FCSO is devoted to law enforcement in Fulton County, providing a secure environment for all residents through proactive measures and community engagement.</p>
+            <p><strong>Sheriff:</strong> YOWSE</p>
+            <p><strong>Undersheriff:</strong> ELR4CCOON</p>
+            <p><strong>Application Status:</strong> Open</p>
+            <div class="mt-5 space-x-4">
+                <a href="https://discord.gg/vEfBU5A6YJ" class="bg-blue-600 text-white px-5 py-3 rounded hover:bg-blue-700 transition duration-300">Discord Invite</a>
+                <a href="https://application-link.com" class="bg-green-600 text-white px-5 py-3 rounded hover:bg-green-700 transition duration-300">Application Link</a>
+            </div>
+        </div>
+
+        <div class="department-card p-6 mb-10 rounded-lg" data-sr-id="4">
+            <img src="229e860fb8548217c61baa9d4ec7faf3.png" alt="AFD Logo" class="department-image mx-auto mb-4">
+            <h2 class="text-3xl font-semibold">Atlanta Fire Department (AFD)</h2>
+            <p>Providing emergency services, the AFD brings medical response and firefighting capabilities together to protect the citizens of Atlanta.</p>
+            <p><strong>Commissioner:</strong> SYN493</p>
+            <p><strong>Deputy Commissioner:</strong> RDOUTDOORSonYT</p>
+            <p><strong>Application Status:</strong> Open</p>
+            <div class="mt-5 space-x-4">
+                <a href="https://discord.gg/vEfBU5A6YJ" class="bg-blue-600 text-white px-5 py-3 rounded hover:bg-blue-700 transition duration-300">Discord Invite</a>
+                <a href="https://application-link.com" class="bg-green-600 text-white px-5 py-3 rounded hover:bg-green-700 transition duration-300">Application Link</a>
+            </div>
+        </div>
+
+        <div class="department-card p-6 mb-10 rounded-lg" data-sr-id="5">
+            <img src="25b5c63cefff13d0b8cd59e004fea7c9 (1).png" alt="Civilian Operations Logo" class="department-image mx-auto mb-5">
+            <h2 class="text-3xl font-semibold">Civilian Operations</h2>
+            <p>This department enhances civilian roleplays by facilitating diverse and imaginative operations through a robust application system.</p>
+            <p><strong>Director:</strong> Angelandidk</p>
+            <p><strong>Assistant Director:</strong> Alfredovince</p>
+            <p><strong>Application Status:</strong> Open</p>
+            <div class="mt-5 space-x-4">
+                <a href="https://discord.gg/vEfBU5A6YJ" class="bg-blue-600 text-white px-5 py-3 rounded hover:bg-blue-700 transition duration-300">Discord Invite</a>
+                <a href="https://application-link.com" class="bg-green-600 text-white px-5 py-3 rounded hover:bg-green-700 transition duration-300">Application Link</a>
+                <a href="https://department-website.com" class="bg-gray-500 text-white px-5 py-3 rounded hover:bg-gray-600 transition duration-300">Department Website</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-bg py-10">
+        <div class="text-center text-white text-lg">
+            Georgia State Roleplay © 2024 created by godlygucci
+        </div>
+    </footer>
+
+    <script>
+        ScrollReveal().reveal('.department-card', {
+            duration: 1000,
+            distance: '50px',
+            origin: 'bottom',
+            interval: 200
+        });
+
+        gsap.from('.header', { duration: 0.5, y: -100, opacity: 0, stagger: 0.3 });
+        gsap.from('.footer-bg', { duration: 0.5, y: 100, opacity: 0 });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            document.querySelector('.container').style.paddingTop = headerHeight + 'px';
+        });
+    </script>
+</body>
+</html>
