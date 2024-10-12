@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application - Georgia State Roleplay</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-design-icons/iconfont/material-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, rgba(34, 34, 55, 0.85), rgba(20, 20, 20, 0.9)), url('./image (19).png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            overflow-x: hidden;
+        }
+        .header {
+            backdrop-filter: blur(10px);
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 6rem 1rem;
+            text-align: center;
+            opacity: 0.9;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .button {
+            display: inline-block;
+            padding: 0.50rem ; /* Smaller size */
+            font-size: 1.25rem; /* Reduced font size */
+            background: linear-gradient(145deg, #2a2d41, #2a2d41);
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.3s ease;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #2c7a7f;
+            transform: scale(1.05);
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-top: 2rem;
+            backdrop-filter: blur(10px);
+        }
+        .whiteline {
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 1rem 0;
+        }
+        @media (max-width: 640px) {
+            .button {
+                font-size: 1rem; /* Even smaller for mobile */
+                padding: 0.5rem 1.25rem;
+            }
+            .container {
+                padding: 4rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header fixed top-0 left-0 w-full z-10 p-5">
+        <nav class="flex justify-between items-center max-w-6xl mx-auto">
+            <div class="flex items-center space-x-3 text-white">
+                <img src="https://cdn.discordapp.com/icons/1145425767283556532/b947aca545a7b23d0079c20b1fd01c29.png?size=512" alt="Logo" class="w-20 h-13">
+                <div class="text-xl font-bold">Georgia State Roleplay</div>
+            </div>
+            <div class="space-x-4">
+                <a href="georgia.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out">Home</a>
+                <a href="infomation.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out">Information</a>
+                <a href="department.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out">Departments</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <h2 class="text-5xl font-extrabold mb-6">Application Page</h2>
+        <p class="text-xl mb-6">Become a part of our dynamic team and help shape the future of our roleplay community!</p>
+        
+        <!-- Staff Application -->
+        <div class="card">
+            <h2 class="text-3xl font-bold mb-4">Staff Application</h2>
+            <p class="mb-4">Join our administrative team and assist in managing the community.</p>
+            <div class="whiteline"></div>
+            <p class="mt-4">Help enforce rules, assist members, and ensure the community runs smoothly.</p>
+            <a href="staff_application_link" class="button mt-6 inline-block">Apply for Staff</a>
+        </div>
+
+        <!-- Department Applications -->
+        <div class="card">
+            <h2 class="text-3xl font-bold mb-4">Department Applications</h2>
+            <p class="mb-4">Apply to join one of our roleplay departments.</p>
+            <div class="whiteline"></div>
+            <!-- Grid of buttons -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+                <a href="afd_link" class="button">Atlanta Fire Department</a>
+                <a href="fcso_link" class="button">Fulton County Sheriff's Office</a>
+                <a href="gsp_link" class="button">Georgia State Patrol</a>
+                <a href="apd_link" class="button">Atlanta Police Department</a>
+            </div>
+        </div>
+
+        <!-- Quality Assurance -->
+        <div class="card">
+            <h2 class="text-3xl font-bold mb-4">Quality Assurance</h2>
+            <p class="mb-4">Help us maintain the highest standards by joining the Quality Assurance team.</p>
+            <div class="whiteline"></div>
+            <p class="mt-4">Ensure our roleplays are fair, balanced, and enjoyable for all members.</p>
+            <a href="qa_application_link" class="button mt-6 inline-block">Apply for QA Team</a>
+        </div>
+
+        <!-- Media Team -->
+        <div class="card">
+            <h2 class="text-3xl font-bold mb-4">Media Team</h2>
+            <p class="mb-4">Join the Media Team to capture and share the best moments from our roleplay sessions.</p>
+            <div class="whiteline"></div>
+            <p class="mt-4">Help create promotional content and grow our community's presence online.</p>
+            <a href="media_application_link" class="button mt-6 inline-block">Apply for Media Team</a>
+        </div>
+    </div>
+    <footer class="footer-bg py-10">
+        <div class="text-center text-white">
+            Georgia State Roleplay © 2024 created by godlygucci
+        </div>
+    </footer>
+    <script>
+        ScrollReveal().reveal('.container', { duration: 1000 });
+        gsap.from('.header', { duration: 0.5, y: -100, opacity: 0, stagger: 0.3 });
+        gsap.from('.footer-bg', { duration: 0.5, y: 100, opacity: 0 });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            document.querySelector('.container').style.paddingTop = headerHeight + 'px';
+        });
+    </script>
+</body>
+</html>

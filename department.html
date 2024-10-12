@@ -48,6 +48,172 @@
             transform: scale(1.05); 
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
+
+/* New overlay for lower opacity on APD card */
+.apd-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    z-index: 1;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.apd-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./APD.png'); /* Replace with your APD image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3; /* Adjust this value to control transparency */
+    z-index: -1; /* Ensure it's behind the content */
+}
+
+.apd-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.fcso-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    z-index: 1;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.fcso-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./Screenshot_2024-10-05_144509.png'); /* Replace with your FCSO image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2; /* Adjust this value for transparency */
+    z-index: -1; /* Ensure it's behind the content */
+}
+
+.fcso-card > * {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
+.fcso-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+.gsp-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    z-index: 1;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gsp-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./GSP.png'); /* Replace with your GSP image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2; /* Adjust this value for transparency */
+    z-index: -1; /* Ensure it's behind the content */
+}
+
+.gsp-card > * {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
+.gsp-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+.afd-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    z-index: 1;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.afd-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./AFD.png'); /* Replace with your AFD image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3; /* Adjust this value for transparency */
+    z-index: -1;
+}
+
+.afd-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+.afd-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Civilian Operations Card */
+.civilian-ops-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    z-index: 1;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.civilian-ops-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./CIVS.png'); /* Replace with your Civilian Ops image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2; /* Adjust this value for transparency */
+    z-index: -1;
+}
+
+.civilian-ops-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+.civilian-ops-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
     </style>
 </head>
 <body>
@@ -60,9 +226,7 @@
             <div class="space-x-5">
                 <a href="georgia.html" class="text-white hover:text-blue-400 transition duration-300 ease-in-out">Home</a>
                 <a href="infomation.html" class="text-white hover:text-blue-400 transition duration-300 ease-in-out">Infomation</a>
-                <a href="department.html" class="text-white hover:text-blue-400 transition duration-300 ease-in-out">Application</a>
-                <a href="links.html" class="text-white hover:text-blue-400 transition duration-300 ease-in-out">Links</a>
-
+                <a href="application.html" class="text-white hover:text-blue-400 transition duration-300 ease-in-out">Application</a>
             </div>
         </nav>
     </header>
@@ -71,7 +235,7 @@
         <h1 class="text-5xl font-extrabold mb-6">Georgia State Departments</h1>
         <p class="text-lg mb-10">Explore the diverse departments at Georgia State Roleplay, each dedicated to creating an engaging roleplaying experience.</p>
         
-        <div class="department-card p-6 mb-10 rounded-lg" data-sr-id="1">
+        <div class="department-card apd-card p-6 mb-10 rounded-lg" data-sr-id="1">
             <img src="46a8261dff9d08a2cb5e5de0cbd0d900.png" alt="APD Logo" class="department-image mx-auto mb-4">
             <h2 class="text-3xl font-semibold">Atlanta Police Department (APD)</h2>
             <p>The APD is committed to enhancing community safety and engagement. Through dedicated divisions, they aim to support Atlanta's citizens effectively.</p>
@@ -84,7 +248,7 @@
             </div>
         </div>
 
-        <div class="department-card p-6 mb-10 rounded-lg" data-sr-id="2">
+        <div class="department-card gsp-card p-6 mb-10 rounded-lg" data-sr-id="2">
             <img src="4f0032be8c9d5a726aa2856f7812a887 (4).png" alt="GSP Logo" class="department-image mx-auto mb-4">
             <h2 class="text-3xl font-semibold">Georgia State Patrol (GSP)</h2>
             <p>The GSP focuses on public safety through rigorous training and unwavering professionalism, ensuring justice and integrity in all operations.</p>
@@ -97,8 +261,8 @@
             </div>
         </div>
 
-        <div class="department-card p-6 mb-10 rounded-lg" data-sr-id="3">
-            <img src="https://via.placeholder.com/100" alt="FCSO Logo" class="department-image mx-auto mb-4">
+        <div class="department-card fcso-card p-6 mb-10 rounded-lg" data-sr-id="3">
+            <img src="./0ff7f18a23fac697cce5c074fd1877a6 (1).png" alt="FCSO Logo" class="department-image mx-auto mb-4">
             <h2 class="text-3xl font-semibold">Fulton County Sheriff's Office (FCSO)</h2>
             <p>FCSO is devoted to law enforcement in Fulton County, providing a secure environment for all residents through proactive measures and community engagement.</p>
             <p><strong>Sheriff:</strong> YOWSE</p>
@@ -110,7 +274,7 @@
             </div>
         </div>
 
-        <div class="department-card p-6 mb-10 rounded-lg" data-sr-id="4">
+        <div class="department-card afd-card p-6 mb-10 rounded-lg" data-sr-id="4">
             <img src="229e860fb8548217c61baa9d4ec7faf3.png" alt="AFD Logo" class="department-image mx-auto mb-4">
             <h2 class="text-3xl font-semibold">Atlanta Fire Department (AFD)</h2>
             <p>Providing emergency services, the AFD brings medical response and firefighting capabilities together to protect the citizens of Atlanta.</p>
@@ -122,8 +286,8 @@
                 <a href="https://application-link.com" class="bg-green-600 text-white px-5 py-3 rounded hover:bg-green-700 transition duration-300">Application Link</a>
             </div>
         </div>
-
-        <div class="department-card p-6 mb-10 rounded-lg" data-sr-id="5">
+        
+        <div class="department-card civilian-ops-card p-6 mb-10 rounded-lg" data-sr-id="5">
             <img src="25b5c63cefff13d0b8cd59e004fea7c9 (1).png" alt="Civilian Operations Logo" class="department-image mx-auto mb-5">
             <h2 class="text-3xl font-semibold">Civilian Operations</h2>
             <p>This department enhances civilian roleplays by facilitating diverse and imaginative operations through a robust application system.</p>

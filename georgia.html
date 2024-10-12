@@ -18,8 +18,36 @@
         .header {
             backdrop-filter: blur(7px);
         }
+
         .footer-bg {
-            background: linear-gradient(to bottom, rgba(10, 20, 80, 0.9), rgba(10, 14, 65, 1));
+            background: rgba(8, 16, 62, 0.2); /* Fixed 30% opacity */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 1);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, 1);
+            font-size: 14px;
         }
         .container {
             max-width: 600px;
@@ -35,11 +63,10 @@
                 <img src="https://cdn.discordapp.com/icons/1145425767283556532/b947aca545a7b23d0079c20b1fd01c29.png?size=512" alt="Logo" class="w-20 h-13">
                 <div class="text-xl font-bold">Georgia State Roleplay</div>
             </div>
-            <div class="space-x-4">
+            <div class="space-x-10">
                 <a href="infomation.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out">Information</a>
                 <a href="application.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out">Application</a>
                 <a href="department.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out">Departments</a>
-                <a href="links.html" class="text-white hover:text-blue-300 transition duration-300 ease-in-out">Links</a>
             </div>
         </nav>
     </header>
@@ -49,11 +76,21 @@
             <p class="text-xl animate__animated animate__fadeIn ">An immersive roleplay experience</p>
         </div>
     </section>
-    <footer class="footer-bg py-10">
-        <div class="text-center text-white">
-            Georgia State Roleplay © Copyright 2024 created by godlygucci
+    <footer class="footer-bg">
+        <div class="footer-links">
+            <a href="legal.html">Legal</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="#">Roblox Group</a>
+            <a href="#">Melonly Page</a>
+            <a href="#">Roblox Group</a>
+            <a href="#">Discord Server</a>
+            <a href="#">Contact us</a>
+        </div>
+        <div class="footer-text">
+            Georgia State Roleplay © Copyright 2024
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
