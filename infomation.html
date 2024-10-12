@@ -54,6 +54,36 @@
             padding-top: 50px;
             padding-bottom: 50px;
         }
+        .footer-bg {
+    background: rgba(8, 16, 62, 0.2); /* Fixed 30% opacity */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    flex-wrap: wrap;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+}
     </style>
 </head>
 <body>
@@ -161,9 +191,18 @@ function toggleDropdown(button) {
         </script>
     </main>
 
-    <footer class="footer-bg py-10 mt-20">
-        <div class="text-center text-white">
-            Georgia State Roleplay © 2024 created by godlygucci
+    <footer class="footer-bg">
+        <div class="footer-links">
+            <a href="legal.html">Legal</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="#">Roblox Group</a>
+            <a href="#">Melonly Page</a>
+            <a href="#">Roblox Group</a>
+            <a href="#">Discord Server</a>
+            <a href="#">Contact us</a>
+        </div>
+        <div class="footer-text">
+            Georgia State Roleplay © Copyright 2024
         </div>
     </footer>
 </body>
