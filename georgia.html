@@ -59,40 +59,40 @@
             text-align: center;
         }
 
-        .text-container {
-            position: relative;
-            z-index: 10; /* Keeps text on top of the images */
-            color: white;
-        }
-
         .scrolling-container {
             position: absolute;
-            top: 40%;
+            top: 60%;
             left: 0;
-            width: 100%;
-            height: 200px; /* Adjust height of the scrolling container */
+            display: flex;
+            width: 200%; /* Double the container size for scrolling */
+            height: 250px;
             overflow: hidden;
             z-index: 0; /* Keeps the images behind the text */
+            animation: scroll 20s linear infinite; /* Animation added for continuous scroll */
         }
 
+        /* Ensure the container for the image has proper dimensions */
         .image-container {
+            flex: 0 0 20%; /* Adjust the image width */
+            overflow: hidden;
             display: flex;
-            width: max-content;
-            animation: scroll 20s linear infinite; /* Scroll every 20 seconds */
+            justify-content: center;
+            align-items: center;
         }
 
+        /* Ensure the image takes the full container space */
         .image-container img {
-            width: 400px; /* Set width for each image */
-            height: auto;
-            margin-right: 16px; /* Space between images */
+            width: 400px;
+            height: 250px;
+            object-fit: cover; /* Ensures the image is properly contained */
         }
 
         @keyframes scroll {
-            from {
-                transform: translateX(100%);
+            0% {
+                transform: translateX(0);
             }
-            to {
-                transform: translateX(-100%);
+            100% {
+                transform: translateX(-50%); /* Scroll half the total width to create seamless loop */
             }
         }
     </style>
@@ -122,15 +122,32 @@
         <!-- Scrolling Image Container -->
         <div class="scrolling-container">
             <div class="image-container">
-                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294850013213622296/image.png?ex=670c828c&is=670b310c&hm=5b38ecb13c8de14d0ce5126b781b06afaef64cc8ae7cd94a643c7386cb8e8e58&" alt="Image 1">
-                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849642780950539/image.png?ex=670c8233&is=670b30b3&hm=7f9d244a785f1992b119d35b3ea4527ccb3a96e261137c2be82caa7f05054bde&" alt="Image 2">
-                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849612162797680/image.png?ex=670c822c&is=670b30ac&hm=69fa7f7af4a7b3dd7c880260b3b3a7c1892bc37c306dd7ccf522fd5c494a5b7a&" alt="Image 3">
-                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849031230590986/image.png?ex=670c81a2&is=670b3022&hm=dbb1516f6d9ba9b193d763e7416f11b930bc12f427c3beb9d11911343bb2e2e6&" alt="Image 4">
-                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849412882759802/Screenshot_2024-10-08_181351.png?ex=670c81fd&is=670b307d&hm=f3bbdc054813ca1b383a44a276122f073cd1d6f8c5ae2597535014ba09e78338&" alt="Image 5">
-                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849459041337435/Screenshot_2024-10-05_144509.png?ex=670c8208&is=670b3088&hm=96ce6923f14eb51dacd2a85c09ae0dfc3f985b1b58ad3dd5d8815ae8ac9fba05&" alt="Image 6">
-                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849527483863152/image.png?ex=670c8218&is=670b3098&hm=97fec928ae2b6c54a9902fe789ab7aaad6c29ef4a15e4f12cf1b65a58cbd9d2c&" alt="Image 7">
-
-                <!-- Add more images as needed -->
+                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294850072881922099/image.png?ex=670d2b5a&is=670bd9da&hm=ddff43f64aedd5888ba77cd5c9d4dd77ef3733e9e1361c85b4ea599158f2d3fa&" alt="Image 1">
+            </div>
+            <div class="image-container">
+                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294850038010478642/image.png?ex=670d2b52&is=670bd9d2&hm=0e1e1f6ba219c4f3a45daeda9a3781f8c12d9f98b61f62d0d1a5e17f08b22333&" alt="Image 2">
+            </div>
+            <div class="image-container">
+                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294850013213622296/image.png?ex=670d2b4c&is=670bd9cc&hm=42c20e8d1be901d83de4ad8457591bb16b661c83cea8a3fc34eb329799d547cc&" alt="Image 3">
+            </div>
+            <div class="image-container">
+                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849642780950539/image.png?ex=670d2af3&is=670bd973&hm=9a4f8acaa756c9743dbf5b598290f46951af79b4733421c14d6860a1777e7cbe&" alt="Image 4">
+            </div>
+            <div class="image-container">
+                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849612162797680/image.png?ex=670d2aec&is=670bd96c&hm=730cb29bd133e2bccb49c6fdd1a161a4f812f8a6070d9b2edda53a8f197af6ed&" alt="Image 5">
+            </div>
+            <!-- Repeat images for seamless scrolling -->
+            <div class="image-container">
+                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849527483863152/image.png?ex=670d2ad8&is=670bd958&hm=1e04c91c507b15a8824a3eb97394f704202643425bd9aef56b97979224dab996&" alt="Image 6">
+            </div>
+            <div class="image-container">
+                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849459041337435/Screenshot_2024-10-05_144509.png?ex=670d2ac8&is=670bd948&hm=dcf34caaa6e62751c940cf3a4a1ef883e8f34032a86496328a1df09e5fcd8676&" alt="Image 7">
+            </div>
+            <div class="image-container">
+                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849412882759802/Screenshot_2024-10-08_181351.png?ex=670d2abd&is=670bd93d&hm=03e4481f31f8e28c8747d19ab5527ba81f7264690eeda18530a7482f04882d81&" alt="Image 8">
+            </div>
+            <div class="image-container">
+                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849059697201235/IMG_8141.png?ex=670d2a68&is=670bd8e8&hm=cd85fd9586b44e63873db9d5fa9f0f9acfd52e2423dcb18ae9840441bad629c7&" alt="Image 9">
             </div>
         </div>
     </section>
