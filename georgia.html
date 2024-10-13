@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=3.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Georgia State Roleplay</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.0/dist/full.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         body {
@@ -15,12 +14,13 @@
             background: linear-gradient(136deg, rgba(39, 40, 56, 0.8), rgba(39, 40, 56, 0.8)), url('./image (19).png') no-repeat center center fixed;
             background-size: cover;
         }
+
         .header {
             backdrop-filter: blur(7px);
         }
 
         .footer-bg {
-            background: rgba(8, 16, 62, 0.2); /* Fixed 30% opacity */
+            background: rgba(8, 16, 62, 0.2);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -49,10 +49,51 @@
             color: rgba(255, 255, 255, 1);
             font-size: 14px;
         }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 10rem;
+
+        .hero {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .text-container {
+            position: relative;
+            z-index: 10; /* Keeps text on top of the images */
+            color: white;
+        }
+
+        .scrolling-container {
+            position: absolute;
+            top: 40%;
+            left: 0;
+            width: 100%;
+            height: 200px; /* Adjust height of the scrolling container */
+            overflow: hidden;
+            z-index: 0; /* Keeps the images behind the text */
+        }
+
+        .image-container {
+            display: flex;
+            width: max-content;
+            animation: scroll 20s linear infinite; /* Scroll every 20 seconds */
+        }
+
+        .image-container img {
+            width: 400px; /* Set width for each image */
+            height: auto;
+            margin-right: 16px; /* Space between images */
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
         }
     </style>
 </head>
@@ -70,12 +111,30 @@
             </div>
         </nav>
     </header>
-    <section class="hero h-screen flex items-center justify-center text-center">
-        <div class="text-white">
-            <h1 class="text-6xl font-extrabold mb-6 animate__animated animate__fadeIn ">Welcome to Georgia State Roleplay!</h1>
-            <p class="text-xl animate__animated animate__fadeIn ">An immersive roleplay experience</p>
+
+    <section class="hero">
+        <!-- Text Container -->
+        <div class="text-container">
+            <h1 class="text-6xl font-extrabold mb-6">Welcome to Georgia State Roleplay!</h1>
+            <p class="text-xl">An authentic and immersive roleplay experience.</p>
+        </div>
+
+        <!-- Scrolling Image Container -->
+        <div class="scrolling-container">
+            <div class="image-container">
+                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294850013213622296/image.png?ex=670c828c&is=670b310c&hm=5b38ecb13c8de14d0ce5126b781b06afaef64cc8ae7cd94a643c7386cb8e8e58&" alt="Image 1">
+                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849642780950539/image.png?ex=670c8233&is=670b30b3&hm=7f9d244a785f1992b119d35b3ea4527ccb3a96e261137c2be82caa7f05054bde&" alt="Image 2">
+                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849612162797680/image.png?ex=670c822c&is=670b30ac&hm=69fa7f7af4a7b3dd7c880260b3b3a7c1892bc37c306dd7ccf522fd5c494a5b7a&" alt="Image 3">
+                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849031230590986/image.png?ex=670c81a2&is=670b3022&hm=dbb1516f6d9ba9b193d763e7416f11b930bc12f427c3beb9d11911343bb2e2e6&" alt="Image 4">
+                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849412882759802/Screenshot_2024-10-08_181351.png?ex=670c81fd&is=670b307d&hm=f3bbdc054813ca1b383a44a276122f073cd1d6f8c5ae2597535014ba09e78338&" alt="Image 5">
+                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849459041337435/Screenshot_2024-10-05_144509.png?ex=670c8208&is=670b3088&hm=96ce6923f14eb51dacd2a85c09ae0dfc3f985b1b58ad3dd5d8815ae8ac9fba05&" alt="Image 6">
+                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849527483863152/image.png?ex=670c8218&is=670b3098&hm=97fec928ae2b6c54a9902fe789ab7aaad6c29ef4a15e4f12cf1b65a58cbd9d2c&" alt="Image 7">
+
+                <!-- Add more images as needed -->
+            </div>
         </div>
     </section>
+
     <footer class="footer-bg">
         <div class="footer-links">
             <a href="legal.html">Legal</a>
@@ -90,13 +149,5 @@
             Georgia State Roleplay © Copyright 2024
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script>
-        ScrollReveal().reveal('.hero', { delay: 200, duration: 1000, interval: 200 });
-        ScrollReveal().reveal('#about', { delay: 400, duration: 1000 });
-    </script>
 </body>
 </html>
