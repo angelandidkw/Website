@@ -60,14 +60,6 @@
             text-align: center;
         }
 
-        .scrolling-container {
-            position: absolute;
-            top: 60%;
-            display: flex;
-            height: 200px;
-            overflow: hidden;
-            z-index: 0;
-        }
 
         .scrolling-container {
     position: absolute;
@@ -81,7 +73,7 @@
 }
 
 .image-container {
-    flex-shrink: 0; /* Prevent shrinking */
+    flex-shrink: 0; /* Prevent shrinking*/
     padding: 0; /* Remove padding */
     margin: 0; /* Remove margin */
     display: inline-block; /* Ensure inline behavior for continuous images */
@@ -92,18 +84,10 @@
 .image-container img {
     height: 200px; /* Adjust image height as needed */
     width: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Make sure the image covers the entire container */
     display: block; /* Ensure no inline space between images */
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-100%));  /* Adjust the scroll distance */
-    }
-}
+
     </style>
 </head>
 <body>
@@ -145,7 +129,6 @@
             <div class="image-container">
                 <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849612162797680/image.png?ex=670d2aec&is=670bd96c&hm=730cb29bd133e2bccb49c6fdd1a161a4f812f8a6070d9b2edda53a8f197af6ed&" alt="Image 5">
             </div>
-            <!-- Repeat images for seamless scrolling -->
             <div class="image-container">
                 <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849527483863152/image.png?ex=670d2ad8&is=670bd958&hm=1e04c91c507b15a8824a3eb97394f704202643425bd9aef56b97979224dab996&" alt="Image 6">
             </div>
@@ -153,10 +136,13 @@
                 <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849459041337435/Screenshot_2024-10-05_144509.png?ex=670d2ac8&is=670bd948&hm=dcf34caaa6e62751c940cf3a4a1ef883e8f34032a86496328a1df09e5fcd8676&" alt="Image 7">
             </div>
             <div class="image-container">
-                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849412882759802/Screenshot_2024-10-08_181351.png?ex=670d2abd&is=670bd93d&hm=03e4481f31f8e28c8747d19ab5527ba81f7264690eeda18530a7482f04882d81&" alt="Image 7">
+                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1295215169634435082/image.png?ex=670dd6a0&is=670c8520&hm=f256b53955e28fa2c62ba6f878bb97d58cc3d5f5e949919a05f4a4b7e3e046a2&" alt="Image 7">
             </div>
             <div class="image-container">
-                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1294849059697201235/IMG_8141.png?ex=670d2a68&is=670bd8e8&hm=cd85fd9586b44e63873db9d5fa9f0f9acfd52e2423dcb18ae9840441bad629c7&" alt="Image 7">
+                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1295215170280226866/image.png?ex=670dd6a0&is=670c8520&hm=588bc99d71d78441e4d82de20d289455cbdfa83948b8542c151e4991b57b19d8&" alt="Image 7">
+            </div>
+            <div class="image-container">
+                <img src="https://cdn.discordapp.com/attachments/1254881224942551132/1295215170645393429/image.png?ex=670dd6a0&is=670c8520&hm=9c2a0917f00000cddb9b4b1862eac365941ff1e7bc85585e1decdb10238b1010&" alt="Image 7">
             </div>
         </div>
     </section>
@@ -178,25 +164,26 @@
 
     <script>
 
+const container = document.querySelector('.scrolling-container');
+let scrollAmount = 0;
+const scrollSpeed = 0.2; // Adjust speed as needed
 
-function startImageScroll() {
-    const container = document.querySelector('.scrolling-container');
-    let position = 0; // Keeps track of the current scroll position
+// Clone the contents to create a seamless effect
+container.innerHTML += container.innerHTML;
 
-    function scrollImages() {
-        position -= 0.1; // Control speed (smaller = slower, larger = faster)
-        if (Math.abs(position) >= container.scrollWidth / 2) {
-            position = 0; // Reset position when it reaches halfway
-        }
-        container.style.transform = `translateX(${position}px)`; // Move container
-        requestAnimationFrame(scrollImages); // Keep the animation going
+function autoScroll() {
+    scrollAmount += scrollSpeed;
+    const maxScroll = container.scrollWidth / 2;
+
+    if (scrollAmount >= maxScroll) {
+        scrollAmount = 0;
     }
 
-    requestAnimationFrame(scrollImages); // Start scrolling
+    container.scrollLeft = scrollAmount;
 }
 
-// Start scrolling once the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", startImageScroll)
+// Start auto-scrolling at roughly 60 frames per second (fps)
+setInterval(autoScroll, 16);
     </script>
 </body>
 </html>
